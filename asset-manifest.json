@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/AI-assistant/static/css/main.625c77d9.css",
+    "main.js": "/AI-assistant/static/js/main.3eeda264.js",
+    "static/media/white_background.jpg": "/AI-assistant/static/media/white_background.e6cd9681e99ad5e870a7.jpg",
+    "index.html": "/AI-assistant/index.html",
+    "main.625c77d9.css.map": "/AI-assistant/static/css/main.625c77d9.css.map",
+    "main.3eeda264.js.map": "/AI-assistant/static/js/main.3eeda264.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.625c77d9.css",
+    "static/js/main.3eeda264.js"
+  ]
+}
