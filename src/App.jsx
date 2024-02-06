@@ -106,10 +106,11 @@ const App = () => {
           <h1>Personal Assistant</h1>
           </>)}
             <ul className="feed">
-            {currentChat?.map((chatMessage, index) => <li key={index} className={chatMessage.role === "user" ? "user_question" : ""}>
-                <p className="role">{chatMessage.role === "user" ? <AiOutlineUser /> : <RiRobot2Line className="robot_icon"/>}</p> 
+            {currentChat?.map((chatMessage, index) => <div className="messages" key={index} style={{justifyContent: `${index % 2 === 0 ? "flex-end" : "flex-start"}`, animation: index % 2 === 0 ? "chatAnim 0.13s forwards" : "response 0.3s forwards"}} ><li className={chatMessage.role === "user" ? "user_question" : ""}>
+                <p className="role" style={{margin: `${chatMessage.role === "user" ? "0 0 0 7px" : "0 10px 0 0"}`}}>{chatMessage.role === "user" ? <AiOutlineUser /> : <RiRobot2Line className="robot_icon"/>}</p> 
                 <p>{chatMessage.content}</p>
-            </li>)}
+            </li>
+            </div>)}
             </ul>
             <div className="bottom-section">
                 <div className="input_container">
