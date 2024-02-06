@@ -1,38 +1,270 @@
-.App {
-  text-align: center;
+.chatGpt_main_container{
+    background: url("./assets/white_background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+.sidebar{
+    background: url("./assets/white_background.jpg");
+    background-size: contain;
+    height: 100vh;
+    width: 244px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sidebar_blur{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 1rem 0;
+    border-right: 1.5px solid rgb(125, 125, 125);
+    overflow: hidden;
+}
+.sidebar_blur > button{
+    background:#ffffffca;
+    border: none;
+    box-shadow: 0 0 3px gray;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    transition: 0.3s ease;
+}
+.sidebar_blur > button:hover{
+    cursor: pointer;
+    transform: scale(1.07);
+}
+.sidebar > nav{
+    border-top: solid 0.5px #ffffffc8;
+    padding: 10px;
+    margin: 10px;
+}
+.history{
+    margin: 10px;
+    padding: 10px;
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+}
+.history::-webkit-scrollbar{
+    display: none;
+}
+.history_title{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    font-size: 18px;
+    letter-spacing: 0.3px;
+}
+.history_title p{
+  font-weight: 600;
+  font-size: 15px;
+  margin-left: 3px;
+}
+.history_title svg{
+    font-size: 17px;
+}
+.history > li{
+    list-style: none;
+    padding: 7px;
+    margin: 7px 0;
+    cursor: pointer;
+    text-align: center;
+    background-color: rgb(224, 224, 224);
+    border-radius: 5px;
+    transition: 0.3s;
+    animation: history_atention 1.5s ease;
+    animation-delay: 1s;
+}
+.history > li:hover{
+    transition: 0.3s;
+    background:linear-gradient(to right, rgba(255, 190, 172, 0.7), rgba(164, 216, 255, 0.7));
+}
+@keyframes history_atention {
+    0%{
+        scale:1;
+    }
+    50%{
+        scale: 1.1;
+        background:linear-gradient(to right, rgba(255, 130, 96, 0.555), rgba(90, 183, 255, 0.528));
+    }
+    100%{
+        scale:1
+    }
+}
+nav p{
+    font-weight: 600;
+    font-size: 14px;
+    color: black;
+    letter-spacing: 0.3px;
+}
+.main{
+    height: 100vh;
+    width:100%;
+}
+.main_blur{
+    width: 100%;
+    height: 100%;
+    padding: 1rem 0;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.bottom-section{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.input_container{
+     position: relative;
+    width: 100%;
+    /* max-width: 650px; */
+    max-width: 650px;
+}
+.input_container > input{
+    width: 100%;
+    font-size: 17px;
+    border: none;
+    background-color:#ffffffca;
+    padding: 12px 45px 12px 15px;
+    border-radius: 9px;
+    box-shadow: 0 0 3px gray;
+}
+.input_container > input:focus{
+    outline:none;
+}
+.input_container > input::placeholder{
+    font-size: 16px;
+    color: gray;
+    letter-spacing: 0.3px;
+}
+.info{
+    color: #000000ca;           
+    font-size: 11px;
+    padding: 10px;
+}
+#submit {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    font-size: 22px;
+    bottom:21px;
+    right: 15px;
+    cursor: pointer;
+    color: rgb(95, 95, 95);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.fa-solid,.fa-spinner,.fa-spin-pulse,.fa-lg{
+    position: absolute;
+    bottom:23px;
+    right:13px;
+}
+.feed{
+    overflow: scroll;
+    width: 90%;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+.feed::-webkit-scrollbar{
+    display: none;
+}
+.feed li{
+    display: flex;
+    background:linear-gradient(to right, rgba(227, 204, 168, 0.9), rgba(163, 207, 216, 0.9));
+    box-shadow: 0 0 3px gray;
+    max-width: 800px;
+    width: 100%;
+    padding: 20px;
+    margin: 7px 0;
+    border-radius: 10px;
+    animation: chatAnim 0.3s ease;
+}
+@keyframes chatAnim {
+    0%{
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.feed p{
+     display: flex;
+     align-items: center;
+}
+.user_question{
+/* background: #ffffffca !important; */
+max-width: 800px;
+background:linear-gradient(to right, rgba(163, 207, 216, 0.9), rgba(227, 204, 168, 0.9)) !important;
+}
+.user_question p:nth-child(1){
+    color:rgb(205, 101, 31);
+}
+.user_question p:nth-child(2){
+    color:rgb(34, 34, 34) !important;
+}
+.robot_icon{
+    color: rgb(0, 125, 174);
+}
+.role{
+    margin: 0 10px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.role svg{
+    width: 30px;
+    height: 30px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@media screen and (min-width: 1520px){
+    .input_container{
+       max-width: 800px;
+    }
+    .feed li{
+        max-width: 1100px;
+        margin: 9px 0;
+    }
 }
-
-.App-link {
-  color: #61dafb;
+@media screen and (max-width: 1020px){
+    .img_container{
+        width: 90%;
+    }
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@media screen and (max-width: 450px){
+    .sidebar{
+        display: none;
+    }
+    .input_container{
+        width: 90%;
+    }
+    .img_container{
+        max-height: 350px;
+    }
+    .feed{
+        width: 100%;
+        padding: 15px
+    }
 }
