@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/AI-assistant/static/css/main.09a11269.css",
-    "main.js": "/AI-assistant/static/js/main.3c1fe1b2.js",
+    "main.js": "/AI-assistant/static/js/main.0254c05a.js",
     "static/media/white_background.jpg": "/AI-assistant/static/media/white_background.e6cd9681e99ad5e870a7.jpg",
     "index.html": "/AI-assistant/index.html",
     "main.09a11269.css.map": "/AI-assistant/static/css/main.09a11269.css.map",
-    "main.3c1fe1b2.js.map": "/AI-assistant/static/js/main.3c1fe1b2.js.map"
+    "main.0254c05a.js.map": "/AI-assistant/static/js/main.0254c05a.js.map"
   },
   "entrypoints": [
     "static/css/main.09a11269.css",
-    "static/js/main.3c1fe1b2.js"
+    "static/js/main.0254c05a.js"
   ]
 }
