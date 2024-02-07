@@ -16,6 +16,7 @@ const App = () => {
     const handleKeyDown = (e) => {
         if(e.key === "Enter"){
             getMessages()
+            e.target.blur()
         }
     }
 
